@@ -17,7 +17,8 @@
 * Start by initializing a Git repository on your local machine. Open a terminal, navigate to your project directory, and run the command `git init` to set up the repository.
 
 * Add your Node.js app files to the Git repository. Use the command `git add .` to include all files in the repository.
-  After populating the node.js files with the required contents, npm and node.js was installed. `npm init ` was run to initiailise the project directory and create the package.json file. `npm install express ` was run afterwards.
+
+After populating the node.js files with the required contents, npm and node.js was installed. `npm init ` was run to initiailise the project directory and create the package.json file. `npm install express ` was run afterwards.
 
 * Commit your changes to the repository. Execute the command `git commit -m "Initial commit"` to create a commit with an appropriate commit message.
 
@@ -36,19 +37,27 @@ By following these steps, I successfully configured Git, added my Node.js app fi
 * Click on "Create build project" to start the project creation process.
 
 * Configure the source settings:
+
   Select the source provider, AWS CodeCommit in this case
+
   Choose the repository ("Trio") and branch (master) to use.
+
   Specify the buildspec file location (buildspec.yml)
 
 * Configure the environment settings:
+
   Select the operating system, runtime, and compute type for the build environment.
+
   Choose whether to use a managed image or a custom Docker image. Managed image was used.
+
   Specify any additional environment variables needed for your build process.
   
 ![env variable](https://github.com/Babbexx-22/AWS-CICD-Pipeline-Project/assets/114196715/92e08a6c-d247-451d-9b28-78979594e1fc)
 
 * Configure the optional notifications:
+
   Specify whether to receive build notifications via Amazon SNS.
+
   Choose the SNS topic and events for which you want to be notified.
 
 * Review the project settings to ensure they match your requirements.
@@ -58,9 +67,13 @@ By following these steps, I successfully configured Git, added my Node.js app fi
 ## STEP 4: INCLUDING THE CODE BUILD ABOVE IN AWS CODEPIPELINE
 
 * Click on the "Create pipeline" button and proceed with the following steps:
+
   Provide a name for your pipeline.
+
   Choose "AWS CodeCommit" as the source provider.
+
   Select the desired repository and branch to use.
+
   Opt for "AWS CodeBuild" as the build provider. Select the earlier created project (node-js-app)
 
 ![build-projects](https://github.com/Babbexx-22/AWS-CICD-Pipeline-Project/assets/114196715/5a1d3d8f-b902-4ad2-8316-7e16621c6db7)
@@ -91,12 +104,12 @@ By following these steps, I successfully configured Git, added my Node.js app fi
 
 
 * The image was successfully pushed to my private repo in ECR.
-* 
+  
 ![image in ecr](https://github.com/Babbexx-22/AWS-CICD-Pipeline-Project/assets/114196715/4ca4148d-298b-4fe6-92a6-e046bb9d601e)
 
-################################################################################################
-
+------------------------------------------------------------------------------------------------
 **THINGS TO NOTE FOR REFERENCE SAKE**
+------------------------------------------------------------------------------------------------
 
 The project was executed in two stages;
 - Running the node.js application 
